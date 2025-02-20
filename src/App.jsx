@@ -1,205 +1,78 @@
 import React from "react";
-import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "slick-carousel/slick/slick-theme.css";
-import "slick-carousel/slick/slick.css";
-import Cart from "./Component/Cart";
-import CrazyHub from "./Component/CrazyHub/CrazyHub";
-import Wishlist from "./Component/Wishlist";
+import "./index.css"; 
+import {BrowserRouter,Route,Routes,Navigate,useLocation,} from "react-router-dom";
+import Dashboard from "./Component/Matrimony/Dash_Board/Dashboard";
+import Upgrade from "./Component/Matrimony/Dash_Board/Upgrade";
+import Home_Page from "./Component/Matrimony/Home_Page/Home_Page";
+import Prime_Header from "./Component/Matrimony/Prime/Prime_Header";
+import Edit from "./Component/Matrimony/Profile/Edit";
+import Help from "./Component/Matrimony/Profile/Help";
+import Profile from "./Component/Matrimony/Profile/Profile";
+import Safe from "./Component/Matrimony/Profile/Safe";
+import Setting from "./Component/Matrimony/Profile/Setting";
+import Verify from "./Component/Matrimony/Profile/Verify";
+import Photo from "./Component/Matrimony/Dash_Board/Photo";
+import Preview from "./Component/Matrimony/Profile/Preview";
+import Matches from "./Component/Matrimony/NavBar/Matches";
+import Form_admin from "./Component/Matrimony/Admin/Form_admin";
+import Admin_dash from "./Component/Matrimony/Admin/Admin_dash";
+import F_andQ from "./Component/Matrimony/F&Q/F_andQ";
+import Blog from "./Component/Matrimony/F&Q/Blog";
+import Search from "./Component/Matrimony/Search/Search";
+import Result from "./Component/Matrimony/Search/Result";
+import Detail from "./Component/Matrimony/Dash_Board/Detail";
 
-import ProductDetails1 from "./Component/InnerDetails/ProductDetails1";
-import ProductDetails2 from "./Component/InnerDetails/ProductDetails2";
-import ProductDetails3 from "./Component/InnerDetails/ProductDetails3";
-import ProductDetails6 from "./Component/InnerDetails/ProductDetails6";
-import ProductDetails4 from "./Component/InnerDetails/ProductsDetails4";
-import ProductDetails5 from "./Component/InnerDetails/ProductsDetails5";
-import ProductSp1 from "./Component/ProductSpec/ProductSp1";
-import ProductSp2 from "./Component/ProductSpec/ProductSpec2";
-import ProductSp3 from "./Component/ProductSpec/ProductSpec3";
-import ProductSp5 from "./Component/ProductSpec/ProductSpec5";
-import ProductSp4 from "./Component/ProductSpec/ProductsSpec4";
-const data = [
-  {
-    id: 1,
-    title: "OPPO Reno12",
-    description: "VIVO Y28s 5G(Vintage Red, Z-Flip 128 GB) (8 GB RAM)",
 
-    price: "25000",
-    discountPrice: "31000",
-    discountPercentage: "25% Off",
+const isAuthenticated = () => {
+  const token = localStorage.getItem("token");
+  console.log("Token in Local Storage:", token); 
+  return !!token; 
+};
 
-    stock: "In-Stock",
 
-    thumbnail:
-      "https://crazzyhub.s3.amazonaws.com/media/product_variant/Vivo-y18i-space-black-64gb-4gb-ram-Front-Back-View.webp",
-  },
-  {
-    id: 2,
-    title: "Samsung Galaxy Z-fold",
-    description: "OnePlus Nord CE4 lite 5G(Mega Blue, 128 GB) (8 GB RAM)",
+const AuthGuard = ({ children }) => {
+  const location = useLocation();
+  const auth = isAuthenticated();
 
-    price: "86000",
-    discountPrice: "17500",
-    discountPercentage: "10% Off",
+  console.log("User Authenticated:", auth); 
 
-    stock: "In-Stock",
+  if (!auth) {
+    console.warn("User is not authenticated, redirecting to Home...");
+    return <Navigate to="/" state={{ from: location }} replace />;
+  }
 
-    thumbnail:
-      "https://crazzyhub.s3.amazonaws.com/media/product_variant/samsung-galaxy-z-fold-6-5g-pink-512gb-12gb-ram-back-fold.webp",
-  },
-  {
-    id: 3,
-    title: "OnePlus Nord CE4",
-    description: " V40 PRO 5G(Titanium Silver Gray, 256 GB) (8 GB RAM)",
-
-    price: "24000",
-    discountPrice: "2500",
-    discountPercentage: "12% Off",
-
-    stock: "In-Stock",
-
-    thumbnail:
-      "https://crazzyhub.s3.amazonaws.com/media/product_variant/ec64eb41a8e787a798be1b71c13a51bb.webp",
-  },
-  {
-    id: 4,
-    title: "Motorola G85 5G",
-    description: "Motorola G85 5G (Olive Green, 128 GB) (8 GB RAM)",
-
-    price: "31000",
-    discountPrice: "25500",
-    discountPercentage: "25% Off",
-
-    stock: "In-Stock",
-
-    thumbnail:
-      "https://crazzyhub.s3.amazonaws.com/media/product_variant/157773-800-auto.webp",
-  },
-  {
-    id: 5,
-    title: "OPPO Reno12",
-    description: "OPPO A3 5G(Ocean Blue, 128 GB) (6 GB RAM) UV Display",
-
-    price: "31000",
-    discountPrice: "25500",
-    discountPercentage: "25% Off",
-
-    stock: "In-Stock",
-
-    thumbnail:
-      "https://crazzyhub.s3.amazonaws.com/media/product_variant/Vivo-y18i-space-black-64gb-4gb-ram-Front-Back-View.webp",
-  },
-  {
-    id: 6,
-    title: "OPPO Reno12",
-    description: "OPPO A3 5G(Ocean Blue, 128 GB) (6 GB RAM) Nord Latency",
-
-    price: "31000",
-    discountPrice: "25500",
-    discountPercentage: "25% Off",
-
-    stock: "In-Stock",
-
-    thumbnail:
-      "https://crazzyhub.s3.amazonaws.com/media/product_variant/Vivo-y18i-space-black-64gb-4gb-ram-Front-Back-View.webp",
-  },
-  {
-    id: 7,
-    title: "OPPO Reno12",
-    description: "OPPO A3 5G(Ocean Blue, 128 GB) (6 GB RAM) Nord Latency",
-
-    price: "31000",
-    discountPrice: "25500",
-    discountPercentage: "25% Off",
-
-    stock: "In-Stock",
-
-    thumbnail:
-      "https://crazzyhub.s3.amazonaws.com/media/product_variant/Vivo-y18i-space-black-64gb-4gb-ram-Front-Back-View.webp",
-  },
-  {
-    id: 8,
-    title: "OPPO Reno12",
-    description: "OPPO A3 5G(Ocean Blue, 128 GB) (6 GB RAM) Nord Latency",
-
-    price: "31000",
-    discountPrice: "25500",
-    discountPercentage: "25% Off",
-
-    stock: "In-Stock",
-
-    thumbnail:
-      "https://crazzyhub.s3.amazonaws.com/media/product_variant/Vivo-y18i-space-black-64gb-4gb-ram-Front-Back-View.webp",
-  },
-  {
-    id: 9,
-    title: "OPPO Reno12",
-    description: "OPPO A3 5G(Ocean Blue, 128 GB) (6 GB RAM) Nord Latency",
-
-    price: "31000",
-    discountPrice: "25500",
-    discountPercentage: "25% Off",
-
-    stock: "In-Stock",
-
-    thumbnail:
-      "https://crazzyhub.s3.amazonaws.com/media/product_variant/Vivo-y18i-space-black-64gb-4gb-ram-Front-Back-View.webp",
-  },
-  {
-    id: 10,
-    title: "OPPO Reno12",
-    description: "OPPO A3 5G(Ocean Blue, 128 GB) (6 GB RAM) Nord Latency",
-
-    price: "31000",
-    discountPrice: "25500",
-    discountPercentage: "25% Off",
-
-    stock: "In-Stock",
-
-    thumbnail:
-      "https://crazzyhub.s3.amazonaws.com/media/product_variant/Vivo-y18i-space-black-64gb-4gb-ram-Front-Back-View.webp",
-  },
-];
+  return children;
+};
 
 const App = () => {
   return (
-    <div>
-      {/* <div className="sticky z-50  top-3/4 ">
-        <FaWhatsapp className="text-white absolute rounded-full bg-green-500 !p-3 !text-6xl right-10  animate__animated animate__pulse animate__infinite infinite  " />
-      </div> */}
+    <BrowserRouter>
+  <Routes>
+    
+    <Route path="/" element={<Home_Page />} />
 
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<CrazyHub />} />
-          <Route path="/wish" element={<Wishlist />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/product" element={<ProductDetails1 />} />
-          <Route path="/product1" element={<ProductDetails2 />} />
-          <Route path="/product2" element={<ProductDetails3 />} />
-          <Route path="/product3" element={<ProductDetails4 />} />
-          <Route path="/product4" element={<ProductDetails5 />} />
-          <Route path="/product5" element={<ProductDetails6 />} />
-          <Route path="/productsp1" element={<ProductSp1 />} />
-          <Route path="/productsp2" element={<ProductSp2 />} />
-          <Route path="/productsp3" element={<ProductSp3 />} />
-          <Route path="/productsp4" element={<ProductSp4 />} />
-          <Route path="/productsp5" element={<ProductSp5 />} />
-        </Routes>
-      </BrowserRouter>
-      {/* <ProductDetails/> */}
-
-      {/* <Location/> */}
-      {/* <Cart/> */}
-      {/* <Practice2/> */}
-      {/* <InnerHeader/> */}
-      {/* <Header/> */}
-      {/* <TabMob1/> */}
-      {/* <Card1/> */}
-      {/* <Drawer1/> */}
-      {/* <Akil/>  */}
-      {/* <Form/>  */}
-      {/* <InnerHeader/> */}
-    </div>
+   
+    <Route path="/dash" element={<AuthGuard><Dashboard /></AuthGuard>} />
+    <Route path="/pro" element={<AuthGuard><Profile /></AuthGuard>} />
+    <Route path="/pre" element={<AuthGuard><Edit /></AuthGuard>} />
+    <Route path="/ver" element={<AuthGuard><Verify /></AuthGuard>} />
+    <Route path="/help" element={<AuthGuard><Help /></AuthGuard>} />
+    <Route path="/safe" element={<AuthGuard><Safe /></AuthGuard>} />
+    <Route path="/prime" element={<AuthGuard><Prime_Header /></AuthGuard>} />
+    <Route path="/set" element={<AuthGuard><Setting /></AuthGuard>} />
+    <Route path="/upg" element={<AuthGuard><Upgrade /></AuthGuard>} />
+    <Route path="/pho" element={<AuthGuard><Photo /></AuthGuard>} />
+    <Route path="/prev" element={<AuthGuard><Preview /></AuthGuard>} />
+    <Route path="/det" element={<AuthGuard><Detail/></AuthGuard>} />
+    <Route path="/mat" element={<AuthGuard><Matches /></AuthGuard>} />
+    <Route path="/adm" element={<AuthGuard><Form_admin /></AuthGuard>} />
+    <Route path="/fq" element={<AuthGuard><F_andQ /></AuthGuard>} />
+    <Route path="/blog" element={<AuthGuard><Blog /></AuthGuard>} />
+    <Route path="/search" element={<AuthGuard><Search/></AuthGuard>} />
+    <Route path="/result" element={<AuthGuard><Result/></AuthGuard>} />
+    <Route path="/admin-dash" element={<AuthGuard><Admin_dash /></AuthGuard>} />
+  </Routes>
+</BrowserRouter>
   );
 };
 
