@@ -26,7 +26,7 @@ export const Raz_Verify = async (req) => {
     const response = await axios.post(BaseUrl1 + ApiUrl.verify_payment, req, {
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Token ff0c6f62e77b4a3a7d0df35b3ec7f891580f37c2",
+        Authorization: `Token ${localStorage.getItem("token")}`,
       },
     });
 

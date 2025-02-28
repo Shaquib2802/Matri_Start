@@ -54,11 +54,19 @@ const Upgrade = () => {
     console.log("handleVerify>>>", response);
 
     try {
-      const requestData = { response: JSON.stringify(response) };
+      const bodyData = new FormData();
+      bodyData.append("response", JSON.stringify(response));
 
-      const otpdata = await Raz_Verify(requestData);
+      const otpdata = await Raz_Verify(bodyData);
 
-      console.log("Verify Response:", otpdata?.data);
+      console.log("Verify Response:", otpdata);
+
+      if (!otpdata || !otpdata.data) {
+        console.error("No response from Raz_Verify API");
+        return;
+      }
+
+      console.log("Verify Response:", otpdata.data);
 
       if (otpdata?.data?.response_code === 200) {
         console.log("Payment Successful");

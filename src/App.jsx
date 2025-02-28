@@ -50,8 +50,6 @@ const App = () => {
   <Routes>
     
     <Route path="/" element={<Home_Page />} />
-
-   
     <Route path="/dash" element={<AuthGuard><Dashboard /></AuthGuard>} />
     <Route path="/pro" element={<AuthGuard><Profile /></AuthGuard>} />
     <Route path="/pre" element={<AuthGuard><Edit /></AuthGuard>} />

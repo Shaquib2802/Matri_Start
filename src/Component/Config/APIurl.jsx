@@ -11,6 +11,6 @@ export const ApiUrl = {
   visit: "/visit-profile/",
   plan: "/all-plan-api/",
   buy: "/buy-plan-api/",
-  verify_payment: "/verify-payment-api/"
-
+  verify_payment: "/verify-payment-api/",
+  ver_pro: "/profile-verification-api/",
 };
