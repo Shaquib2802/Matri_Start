@@ -13,4 +13,6 @@ export const ApiUrl = {
   buy: "/buy-plan-api/",
   verify_payment: "/verify-payment-api/",
   ver_pro: "/profile-verification-api/",
+  sendRequest: "/send-chat-request/",
+  getRequest: "/get-received-chat-requests/",
 };

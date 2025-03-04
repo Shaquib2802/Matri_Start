@@ -34,3 +34,19 @@ export const veriPro = async (req) => {
     console.log(e);
   }
 };
+
+export const Req_Sent = async (req) => {
+  console.log("this is service data", req);
+  try {
+    const response = await axios.post(BaseUrl1 + ApiUrl.sendRequest, req, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Token ${localStorage.getItem("token")}`,
+      },
+    });
+
+    return response || [];
+  } catch (e) {
+    console.log(e);
+  }
+};

@@ -8,9 +8,8 @@ export const Login_Post = async (req) => {
     const response = await axios.post(BaseUrl1 + ApiUrl.getOTP, req, {
       headers: {
         "Content-Type": "application/json",
-/*         Authorization: "Token 08c47b9e031405a269957a3411278495a5f66eb8"*/
+        /*         Authorization: "Token 08c47b9e031405a269957a3411278495a5f66eb8"*/
         Authorization: `Token ${localStorage.getItem("token")}`,
-
       },
     });
 
@@ -19,3 +18,4 @@ export const Login_Post = async (req) => {
     console.log(e);
   }
 };
+

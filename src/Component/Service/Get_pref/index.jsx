@@ -26,7 +26,7 @@ export const Get_Search = async (data) => {
   try {
     const response = await axios.get(BaseUrl1 + ApiUrl.search, {
       params: data,
-     
+
       headers: {
         "Content-Type": "application/json",
         /*Authorization: "Token 08c47b9e031405a269957a3411278495a5f66eb8"*/
@@ -129,10 +129,26 @@ export const get_Plan = async () => {
   console.log("this is service data1");
   try {
     const response = await axios.get(BaseUrl1 + ApiUrl.plan, {
-   
       headers: {
         "Content-Type": "application/json",
         /*Authorization: "Token 08c47b9e031405a269957a3411278495a5f66eb8"*/
+        Authorization: `Token ${localStorage.getItem("token")}`,
+      },
+    });
+
+    return response || [];
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const Get_Noti = async () => {
+  console.log("this is service data");
+  try {
+    const response = await axios.get(BaseUrl1 + ApiUrl.getRequest, {
+      headers: {
+        "Content-Type": "application/json",
+        /*         Authorization: "Token 08c47b9e031405a269957a3411278495a5f66eb8"*/
         Authorization: `Token ${localStorage.getItem("token")}`,
       },
     });

@@ -21,6 +21,7 @@ import Blog from "./Component/Matrimony/F&Q/Blog";
 import Search from "./Component/Matrimony/Search/Search";
 import Result from "./Component/Matrimony/Search/Result";
 import Detail from "./Component/Matrimony/Dash_Board/Detail";
+import Notificatio_Modal from "./Component/Matrimony/Dash_Board/Notificatio_Modal";
 
 
 const isAuthenticated = () => {
@@ -69,6 +70,7 @@ const App = () => {
     <Route path="/search" element={<AuthGuard><Search/></AuthGuard>} />
     <Route path="/result" element={<AuthGuard><Result/></AuthGuard>} />
     <Route path="/admin-dash" element={<AuthGuard><Admin_dash /></AuthGuard>} />
+
   </Routes>
 </BrowserRouter>
   );
