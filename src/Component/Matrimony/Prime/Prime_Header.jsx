@@ -2,6 +2,7 @@ import React from "react";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import HomeIcon from "@mui/icons-material/Home";
 import { useNavigate } from "react-router-dom";
+import Prime from "./Prime";
 
 const Prime_Header = () => {
     const navigate = useNavigate();
@@ -115,23 +116,7 @@ const Prime_Header = () => {
         </div>
       </div>
 
-      <div className="bg-[url('https://i.ibb.co/tL9Zttw/Screenshot-2025-01-12-150146.png')]   blur-sm h-[63vh] z-10 bg-cover relative "></div>
-      <div className="bg-white w-[27%] border-2 flex-col rounded-xl p-5 gap-y-5 flex z-50 absolute top-[37%] left-[36%]">
-        <div>
-          <img
-            className="mx-auto"
-            src="https://imgs.bharatmatrimony.com/webapp-assets/revamp-images/prime-toggle-id-male-image.svg"
-            alt=""
-          />
-        </div>
-        <div className="mx-auto text-xl font-bold ">
-          It is mandatory to add your photo to view Prime matches.
-        </div>
-        <div>Just two more steps before you view Prime matches.</div>
-        <div className="p-2 bg-purple-900 rounded-3xl font-semibold text-white text-center">
-          Add Your Photo
-        </div>
-      </div>
+      <Prime/>
     </div>
   );
 };
