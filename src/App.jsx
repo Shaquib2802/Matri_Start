@@ -71,6 +71,7 @@ const App = () => {
     <Route path="/result" element={<AuthGuard><Result/></AuthGuard>} />
     <Route path="/admin-dash" element={<AuthGuard><Admin_dash /></AuthGuard>} />
 
+
   </Routes>
 </BrowserRouter>
   );

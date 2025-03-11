@@ -1,4 +1,4 @@
-import LocalPhoneIcon from "@mui/icons-material/LocalPhone";  
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import React, { useEffect, useState } from "react";
 import { SlOptionsVertical } from "react-icons/sl";
@@ -17,27 +17,18 @@ const Detail = () => {
     const checkProfileVisits = async () => {
       const profile_id = state?.data?.id;
       try {
-       
         console.log(" Sending Profile ID:", profile_id);
         const response = await get_Visit(profile_id);
         console.log("Profile Visit API Response:", response);
 
-        if (response?.data?.message === "You have already visited a profile. Please buy a plan to visit more profiles.") {
+        if (
+          response?.data?.message ===
+          "You have already visited a profile. Please buy a plan to visit more profiles."
+        ) {
           navigate("/upg");
         } else {
           console.log("Profile visit is allowed.");
         }
-
-      /*   if (Array.isArray(response?.data)) {
-          setVisitedProfiles(response.data);
-
-          if (response.data.length >= 3) {
-            navigate("/upg");
-          }
-        } else {
-          console.error("Profile visit data is not an array", response?.data);
-          setVisitedProfiles();
-        } */
       } catch (error) {
         console.error("Error fetching profile visit data:", error);
       }
@@ -52,7 +43,7 @@ const Detail = () => {
         <div className="w-[33%] ">
           <div>
             <img
-              className="rounded-xl"
+              className="rounded-xl "
               src={`http://192.168.1.188:8098/${state?.data?.profile_picture}`}
               alt=""
             />

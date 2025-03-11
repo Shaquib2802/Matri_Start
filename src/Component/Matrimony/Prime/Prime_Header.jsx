@@ -3,12 +3,14 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import HomeIcon from "@mui/icons-material/Home";
 import { useNavigate } from "react-router-dom";
 import Prime from "./Prime";
+import HeaderDash from "../Dash_Board/HeaderDash";
+import Prime_Body from "./Prime_Body";
 
 const Prime_Header = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <div>
-      <div
+      {/*    <div
         className="w-[100%] shadow-lg top-0 sticky  z-50 bg-[url('https://imgs.bharatmatrimony.com/bmimgs/desktop-images/new-image/prime-bg.png')] bg-cover bg-no-repeat
     "
       >
@@ -114,9 +116,24 @@ const Prime_Header = () => {
             PRIME
           </div>
         </div>
+      </div> */}
+      <HeaderDash />
+      <div className="border-t-2 border-gray-300 my-14 w-[55%] mx-auto relative z-20 ">
+        <div className="flex w-[35%] h-10 border rounded-3xl absolute -top-5 left-[30%] shadow-lg bg-white   justify-around">
+          <div
+            className="   text-sm pt-2  font-semibold   text-center  w-[45%] cursor-pointer"
+            onClick={() => navigate("/dash")}
+          >
+            Regular
+          </div>
+          <div className="border-2 rounded-3xl text-center w-[55%] border-purple-800 bg-purple-100 text-purple-900 text-sm pt-2 font-semibold">
+            PRIME
+          </div>
+        </div>
       </div>
+      <Prime_Body/>
 
-      <Prime/>
+      {/* <Prime/> */}
     </div>
   );
 };

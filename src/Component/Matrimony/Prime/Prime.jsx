@@ -83,7 +83,7 @@ const Prime = () => {
                 />
                 <input type="file" className="hidden" />
                 <div className="text-xs mt-1 text-center text-gray-900 ">
-                  Upload from gallery
+                  Upload from galler  y
                 </div>
               </label>
             </div>
@@ -113,7 +113,7 @@ const Prime = () => {
           <div>
             <div className="border relative border-green-700 rounded-xl  mt-2">
               <div className="text-xs text-green-700 left-2 absolute p-1 -top-3 bg-white">
-                Enter Driving License Number
+                Enter Driving Licence Number
               </div>
               <div className="  p-2">
                 <input type="text" className="outline-none w-[90%]" />
