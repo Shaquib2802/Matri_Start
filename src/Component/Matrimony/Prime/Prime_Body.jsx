@@ -12,6 +12,7 @@ import Assist from "./Assist";
 import Secure from "./Secure";
 import Other from "./Other";
 import Bottom_dash from "../Dash_Board/Bottom_dash";
+import { useNavigate } from "react-router-dom";
 
 const Prime_Body = () => {
   const [open, setOpen] = useState(false);
@@ -22,6 +23,8 @@ const Prime_Body = () => {
   const toggleDropdown1 = () => {
     setOpen1(!open1);
   };
+
+  const navigate = useNavigate();
   return (
     <div>
       <div className="flex w-[100%] justify-center gap-x-5 ">
@@ -52,7 +55,10 @@ const Prime_Body = () => {
               Upgrade now
             </div>
           </div>
-          <div className="flex justify-start items-center border-b py-4 gap-x-3   w-[80%] mx-auto ">
+          <div
+            onClick={() => navigate("/pro")}
+            className="flex cursor-pointer justify-start items-center border-b py-4 gap-x-3   w-[80%] mx-auto "
+          >
             <div>
               <img
                 src="https://imgs.bharatmatrimony.com/webapp-assets/revamp-images/dashboard-revamp/icon-menu-editprofile-new.svg"
@@ -64,7 +70,10 @@ const Prime_Body = () => {
               Edit profile
             </div>
           </div>
-          <div className="flex justify-start items-center border-b py-4 gap-x-3   w-[80%] mx-auto ">
+          <div
+            onClick={() => navigate("/pre")}
+            className="flex cursor-pointer justify-start items-center border-b py-4 gap-x-3   w-[80%] mx-auto "
+          >
             <div>
               <img
                 className="mt-2"
@@ -83,7 +92,10 @@ const Prime_Body = () => {
               Support & feedback
             </div>
           </div>
-          <div className="flex justify-start items-center border-b py-4 gap-x-3   w-[80%] mx-auto ">
+          <div
+            onClick={() => navigate("/set")}
+            className="flex justify-start cursor-pointer items-center border-b py-4 gap-x-3   w-[80%] mx-auto "
+          >
             <div>
               <img
                 src="https://imgs.bharatmatrimony.com/webapp-assets/revamp-images/setting.svg"
@@ -108,7 +120,10 @@ const Prime_Body = () => {
               className="hover:bg-gray-100 p-3 w-[75%]"
             >
               <div className="flex  justify-between items-center">
-                <div className="tracking-wide text-gray-600 text-sm font-semibold">
+                <div
+                  onClick={() => navigate("/help")}
+                  className=" cursor-pointer tracking-wide text-gray-600 text-sm font-semibold"
+                >
                   Help
                 </div>
                 <div>
@@ -121,7 +136,10 @@ const Prime_Body = () => {
               </div>
               {open && (
                 <div>
-                  <div className="my-2 tracking-wide text-gray-600 text-sm font-semibold">
+                  <div
+                    onClick={() => navigate("/fq")}
+                    className="my-2 cursor-pointer tracking-wide text-gray-600 text-sm font-semibold"
+                  >
                     FAQ's
                   </div>
                   <div className=" my-2 tracking-wide text-gray-600 text-sm font-semibold">

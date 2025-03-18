@@ -10,7 +10,7 @@ const Comp_Pro = () => {
     return (
       <button onClick={onClick} className="">
         {" "}
-        <IoIosArrowBack className="absolute !left-0 !top-[48%] rounded-r-xl bg-white !p-1 !font-bold !text-3xl " />
+        <IoIosArrowBack className="absolute !left-0 !top-[48%] z-30 rounded-r-xl bg-white !p-1 !font-bold !text-3xl " />
       </button>
     );
   }
@@ -20,7 +20,7 @@ const Comp_Pro = () => {
     return (
       <button className="" onClick={onClick}>
         {" "}
-        <IoIosArrowForward className="absolute !right-0 top-[48%] z-30 rounded-r-xl bg-white !p-1 !font-bold !text-3xl " />
+        <IoIosArrowForward className="absolute !right-0 top-[48%] z-30 rounded-l-xl bg-white !p-1 !font-bold !text-3xl " />
       </button>
     );
   }
@@ -31,8 +31,8 @@ const Comp_Pro = () => {
     slidesToShow: 2,
     slidesToScroll: 1,
     initialSlide: 0,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    nextArrow: <SamplePrevArrow />,
+    prevArrow: <SampleNextArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -180,7 +180,8 @@ const Comp_Pro = () => {
               </div>
             </div>
             <div className="">
-              <img className="absolute w-24 h-24 bottom-0 right-2"
+              <img
+                className="absolute w-24 h-24 bottom-0 right-2"
                 src="https://imgs.bharatmatrimony.com/webapp-assets/revamp-images/dashboard-revamp/discover-bg-abroad-new.svg"
                 alt=""
               />
@@ -195,7 +196,8 @@ const Comp_Pro = () => {
               </div>
             </div>
             <div className="">
-              <img className="absolute w-24 h-24 bottom-0 right-2"
+              <img
+                className="absolute w-24 h-24 bottom-0 right-2"
                 src="https://imgs.bharatmatrimony.com/webapp-assets/revamp-images/dashboard-revamp/discover-bg-withphoto.svg"
                 alt=""
               />

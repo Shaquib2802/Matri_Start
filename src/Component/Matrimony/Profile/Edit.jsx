@@ -8,6 +8,9 @@ import { Get_Pref } from "../../Service/Get_pref";
 import { Pref_Update } from "../../Service/Update_pref";
 
 const Edit = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   const [open1, setOpen1] = useState(false);
   const handleOpen = () => {
     setOpen1(!open1);
