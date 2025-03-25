@@ -24,7 +24,7 @@ const Prime_Body = () => {
     setOpen1(!open1);
   };
 
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
   return (
     <div>
       <div className="flex w-[100%] justify-center gap-x-5 ">
@@ -50,7 +50,10 @@ const Prime_Body = () => {
             <div className="text-xs w-[70%] text-center font-semibold">
               Upgrade membership to call/chat with matches
             </div>
-            <div className="border bg-[#4E1A55] text-center w-[50%] text-white p-1.5 rounded-2xl font-semibold text-[70%]">
+            <div
+              onClick={() => navigate("/upg")}
+              className="border bg-[#4E1A55] cursor-pointer text-center w-[50%] text-white p-1.5 rounded-2xl font-semibold text-[70%]"
+            >
               {" "}
               Upgrade now
             </div>
@@ -170,7 +173,7 @@ const Prime_Body = () => {
               <div className=" ">
                 <img
                   className="w-5  h-5"
-                  src="https://imgs.bharatmatrimony.com/webapp-assets/revamp-images/dashboard-revamp/icon-menu-help-new.svg"
+                  src="https://imgs.bharatmatrimony.com/webapp-assets/revamp-images/dashboard-revamp/icon-menu-more-new.svg"
                   alt=""
                 />
               </div>
@@ -277,8 +280,8 @@ const Prime_Body = () => {
           </div>
         </div>
         <div className="w-[62%] mt-10 ">
-          <div className="border border-gray-3  00 flex rounded-xl py-5 px-10 ">
-            <div className=" w-[63%]">
+          <div className="border border-gray-3    flex rounded-xl  px-10 ">
+            <div className=" w-[63%] my-auto">
               <div className="text-2xl font-semibold">Become a paid member</div>
               <div className="text-2xl ">
                 Get up to{" "}
@@ -319,8 +322,8 @@ const Prime_Body = () => {
                 </div>
               </div>
             </div>
-            <div className=" w-[37%]  -mt-5 ">
-              <img className=" w-52   mx-auto h-68" src={Img1} alt="uni" />
+            <div className=" w-[37%]   ">
+              <img className=" w-56   mx-auto h-68 " src={Img1} alt="uni" />
             </div>
           </div>
           <div className="border-2 my-10 border-gray-100"></div>

@@ -28,7 +28,7 @@ const HeaderDash = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-[100%] shadow-lg top-0 sticky z-50 bg-white">
+    <div className="w-[100%] shadow-lg top-0 sticky z-50 bg-white overflow-hidden">
       <div className="flex w-[90%] gap-x-8 h-[16vh] mx-auto">
         <div className="w-[20%]">
           <img

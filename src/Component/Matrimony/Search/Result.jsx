@@ -10,7 +10,7 @@ const Result = () => {
       <HeaderDash />
       <div className="w-[60%] border-2 rounded-md p-2 mx-auto my-10">
         <div className="text-xl font-semibold">Displaying Matches</div>
-        {state?.data.map((profile) => (
+        {Array.isArray(state.data) && state?.data.map((profile) => (
           <div
             key={profile.id}
             className="flex my-5 rounded-md m-1 border justify-start gap-x-5 items-center"
