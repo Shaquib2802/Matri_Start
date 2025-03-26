@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Pro_Head from "./Pro_Head";
 import Bottom_dash from "../Dash_Board/Bottom_dash";
 import { useMutation } from "@tanstack/react-query";
 import { veriPro } from "../../Service/SignUP";
+import { useNavigate } from "react-router-dom";
 
 const Verify = () => {
   const [uploads, setUploads] = useState({});
@@ -37,13 +38,17 @@ const Verify = () => {
       console.log("Payload_Data:File)))", id);
       /* formData.append(id, file); */
       formData.append(id, file);
-   /*    formData.append("id", id); */
+      /*    formData.append("id", id); */
 
       veriPro(formData);
 
       /*    }); */
     }
   };
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   const documents = [
     { id: "driving_license", label: "Driving Licence" },
@@ -58,12 +63,14 @@ const Verify = () => {
   ];
   const documents2 = [{ id: "salary_slip", label: "Upload Salary Slip" }];
   const documents3 = [{ id: "sdownloadApp", label: "Download App" }];
+
+  const navigate = useNavigate();
   return (
     <div className="w-full">
       <Pro_Head />
 
       <div className="bg-[#f2090b] flex flex-col py-8 gap-y-2">
-        <div className="mx-auto">
+        <div className="mx-auto cursor-pointer" >
           <img
             src="https://imgs.hindimatrimony.com/bmimgs/trust-badge-icon.png"
             alt="Verification Badge"

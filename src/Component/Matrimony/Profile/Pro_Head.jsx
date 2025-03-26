@@ -8,11 +8,10 @@ const Pro_Head = () => {
   const navigate = useNavigate();
   return (
     <div
-      className="w-[100%]  top-0 sticky z-50 bg-white border-b-2 border-green-600
-    "
+      className="w-[100%]  top-0 sticky z-50 bg-white border-b-2 border-green-600"
     >
       <div className="flex justify-around items-center  gap-x-8 h-[13vh] px-32">
-        <div className="w-[20%]   items-center">
+        <div className="w-[20%]   items-center cursor-pointer" onClick={()=>navigate('/dash')}>
           <img
             className="w-[65%] "
             src="https://imgs.bharatmatrimony.com/bmimgs/new-logo/bharat-matrimony-logo.png"

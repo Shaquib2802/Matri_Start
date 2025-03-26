@@ -32,6 +32,10 @@ import All_Matches from "./Component/Matrimony/Matches/All_Matches";
 import All from "./Component/Matrimony/Matches/All";
 import Newly from "./Component/Matrimony/Matches/Newly";
 import Sort from "./Component/Matrimony/Matches/Sort";
+import Mobile_Pri from "./Component/Matrimony/Profile/Mobile_Pri";
+import Photo_Pri from "./Component/Matrimony/Profile/Photo_Pri";
+import Horo from "./Component/Matrimony/Profile/Horo";
+import Privacy from "./Component/Matrimony/Profile/Privacy";
 
 const isAuthenticated = () => {
   const token = localStorage.getItem("token");
@@ -107,6 +111,30 @@ const App = () => {
           }
         />
         <Route
+          path="/photo"
+          element={
+            <AuthGuard>
+              <Photo_Pri/>
+            </AuthGuard>
+          }
+        />
+        <Route
+          path="/horo"
+          element={
+            <AuthGuard>
+              <Horo/>
+            </AuthGuard>
+          }
+        />
+        <Route
+          path="/mob"
+          element={
+            <AuthGuard>
+              <Mobile_Pri/>
+            </AuthGuard>
+          }
+        />
+        <Route
           path="/prime"
           element={
             <AuthGuard>
@@ -159,6 +187,14 @@ const App = () => {
           element={
             <AuthGuard>
               <Matches />
+            </AuthGuard>
+          }
+        />
+        <Route
+          path="/privacy"
+          element={
+            <AuthGuard>
+              <Privacy/>
             </AuthGuard>
           }
         />

@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Pro_Head from "./Pro_Head";
 import { useNavigate } from "react-router-dom";
+import Privacy from "./Privacy";
+import Bottom_dash from "../Dash_Board/Bottom_dash";
 
 const Setting = () => {
   const [selectedOption, setSelectedOption] = useState("Edit e-mail Address");
-const navigate= useNavigate();
+   useEffect(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
+
   return (
     <div>
       <Pro_Head />
-      <div className="bg-gray-100 p-16 h-[100vh] px-40 gap-x-4">
+      <div className="bg-gray-100 p-16  px-40 gap-x-4">
         <div className="text-xl px-2">Profile Settings</div>
         <div className="flex mt-2 gap-x-4">
           <div className="w-[20%] border-2 h-fit bg-white">
@@ -52,6 +57,16 @@ const navigate= useNavigate();
                 }`}
               >
                 Call Prefrence
+              </div>
+              <div
+                onClick={() => setSelectedOption("Privacy")}
+                className={`text-sm px-4 py-1.5 cursor-pointer ${
+                  selectedOption === "Privacy"
+                    ? "bg-blue-200"
+                    : "text-blue-500 hover:underline"
+                }`}
+              >
+                Privacy
               </div>
             </div>
           </div>
@@ -148,7 +163,12 @@ const navigate= useNavigate();
                   <label className="!text-sm ml-1 ">Never</label>
                 </form>
               </div>
-            ) : (
+            ) : selectedOption === "Privacy" ? (
+              <div>
+               <Privacy/>
+              
+              </div>
+            ) :  (
               <div>
                 <h2 className="text-lg font-semibold">Invalid Option</h2>
                 <p className="mt-2">Please select a valid option.</p>
@@ -157,6 +177,7 @@ const navigate= useNavigate();
           </div>
         </div>
       </div>
+      <Bottom_dash/>
     </div>
   );
 };
