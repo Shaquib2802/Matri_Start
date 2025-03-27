@@ -36,6 +36,7 @@ import Mobile_Pri from "./Component/Matrimony/Profile/Mobile_Pri";
 import Photo_Pri from "./Component/Matrimony/Profile/Photo_Pri";
 import Horo from "./Component/Matrimony/Profile/Horo";
 import Privacy from "./Component/Matrimony/Profile/Privacy";
+import { Alert } from "./Component/Matrimony/Profile/Alert";
 
 const isAuthenticated = () => {
   const token = localStorage.getItem("token");
@@ -242,7 +243,7 @@ const App = () => {
           path="/matches"
           element={
             <AuthGuard>
-              <All_Matches />
+              {/* <All_Matches /> */}
             </AuthGuard>
           }
         />
@@ -250,7 +251,7 @@ const App = () => {
           path="/all"
           element={
             <AuthGuard>
-              <All/>
+              {/* <All/> */}
             </AuthGuard>
           }
         />
@@ -258,7 +259,7 @@ const App = () => {
           path="/newly"
           element={
             <AuthGuard>
-              <Newly/>
+              {/* <Newly/> */}
             </AuthGuard>
           }
         />
@@ -275,7 +276,15 @@ const App = () => {
           path="/sort"
           element={
             <AuthGuard>
-              <Sort/>
+              {/* <Sort/> */}
+            </AuthGuard>
+          }
+        />
+        <Route
+          path="/alert"
+          element={
+            <AuthGuard>
+              <Alert/>
             </AuthGuard>
           }
         />

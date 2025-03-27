@@ -28,7 +28,7 @@ const HeaderDash = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-[100%] shadow-lg top-0 sticky z-50 bg-white overflow-hidden">
+    <div className="w-[100%] shadow-lg top-0 sticky z-50 bg-white ">
       <div className="flex w-[90%] gap-x-8 h-[16vh] mx-auto">
         <div className="w-[20%]">
           <img
@@ -99,11 +99,11 @@ const HeaderDash = () => {
                 {state?.count}
               </div>
             </div>
-            <div className=" mt-0.5 text-sm text-black relative">
+            <div className=" mt-0.5 text-sm text-black  relative">
               Notification
               {open1 && (
                 <div
-                  className="mt-3 absolute w-[30vw] right-1"
+                  className="mt-3 absolute  w-[30vw] right-1"
                   onClick={handleClose1}
                 >
                   <div className="bg-white">
@@ -145,7 +145,7 @@ const HeaderDash = () => {
 
         <div>
           <div
-            className={`hover:cursor-pointer flex mt-4 relative text-black hover:text-[#f2090b] ${
+            className={`hover:cursor-pointer flex mt-4 z-50 relative text-black hover:text-[#f2090b] ${
               open ? "text-[#f2090b]" : ""
             }`}
             onMouseEnter={handleOpen}
@@ -161,7 +161,7 @@ const HeaderDash = () => {
             {open && (
               <div
                 onMouseLeave={handleClose}
-                className="absolute mt-12   z-40 right-[10%] w-[25vw] "
+                className="absolute mt-12   !z-50 right-[10%] w-[25vw] "
               >
                 <div className="mx-auto my-5 border h-fit rounded-xl  shadow-xl bg-white flex flex-col">
                   <div className="text-xl font-semibold text-center mt-6">

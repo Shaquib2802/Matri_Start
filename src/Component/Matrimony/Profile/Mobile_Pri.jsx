@@ -59,8 +59,9 @@ const Mobile_Pri = () => {
                     Contact Details
                   </div>
                   <div className="flex flex-col gap-y-3 p-2">
-                    <div className="text-lg text-gray-400 border-b border-dashed font-semibold ">
-                      Contact Number
+                    <div className="text-lg border-gray-400  flex justify-between items-center  text-gray-400 border-b border-dashed font-semibold ">
+                      <div>Contact Number</div>
+                      <div className="text-xs text-blue-500">Edit</div>
                     </div>
 
                     <div className="flex gap-x-[21.5%] items-center">

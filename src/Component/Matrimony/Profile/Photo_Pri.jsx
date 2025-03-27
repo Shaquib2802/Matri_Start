@@ -13,7 +13,7 @@ const Photo_Pri = () => {
             <input type="radio"  id="visibility-option" className="!text-sm !mt-1" />
             <label className="!text-xs  ml-1 "  htmlFor="visibility-option"> Visible to all </label>
           </div>
-          <div>
+          <div className="">
             <img
               className="mt-2"
               src="https://imgs.bharatmatrimony.com/bmimgs/recommend-betterresponse.gif"

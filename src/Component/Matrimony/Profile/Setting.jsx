@@ -3,12 +3,17 @@ import Pro_Head from "./Pro_Head";
 import { useNavigate } from "react-router-dom";
 import Privacy from "./Privacy";
 import Bottom_dash from "../Dash_Board/Bottom_dash";
+import { Alert } from "./Alert";
+import Email from "./Email1";
+import Email1 from "./Email1";
+import SMS from "./SMS";
+import More_Email from "./More_Email";
 
 const Setting = () => {
   const [selectedOption, setSelectedOption] = useState("Edit e-mail Address");
-   useEffect(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, []);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <div>
@@ -142,33 +147,39 @@ const Setting = () => {
                 </div>
               </div>
             ) : selectedOption === "Alerts & Updates" ? (
-              <div>
-                <h2 className="text-lg font-semibold">Alerts & Updates</h2>
-                <p className="mt-2">Manage your notifications and updates.</p>
-              </div>
+             <Alert/>
             ) : selectedOption === "Call Prefrence" ? (
               <div>
-                <h2 className="text-lg font-semibold border-b border-dashed border-gray-500">Call Preference</h2>
-                <div className="text-xs font-semibold mt-2">Let us know when we can call you:</div>
+                <h2 className="text-lg font-semibold border-b border-dashed border-gray-500">
+                  Call Preference
+                </h2>
+                <div className="text-xs font-semibold mt-2">
+                  Let us know when we can call you:
+                </div>
                 <form className="mt-2">
                   <input type="radio" className="!text-sm " />
-                  <label className="!text-sm ml-1 ">Call when there are important updates/offers</label><br />
+                  <label className="!text-sm ml-1 ">
+                    Call when there are important updates/offers
+                  </label>
+                  <br />
                   <input type="radio" className="!text-sm " />
-                  <label className="!text-sm ml-1 ">Call after 1 month</label><br />
+                  <label className="!text-sm ml-1 ">Call after 1 month</label>
+                  <br />
                   <input type="radio" className="!text-sm " />
-                  <label className="!text-sm ml-1 ">Call after 3 months</label><br />
+                  <label className="!text-sm ml-1 ">Call after 3 months</label>
+                  <br />
                   <input type="radio" className="!text-sm " />
-                  <label className="!text-sm ml-1 ">Call after 6 months</label><br />
+                  <label className="!text-sm ml-1 ">Call after 6 months</label>
+                  <br />
                   <input type="radio" className="!text-sm " />
                   <label className="!text-sm ml-1 ">Never</label>
                 </form>
               </div>
             ) : selectedOption === "Privacy" ? (
               <div>
-               <Privacy/>
-              
+                <Privacy />
               </div>
-            ) :  (
+            ) : (
               <div>
                 <h2 className="text-lg font-semibold">Invalid Option</h2>
                 <p className="mt-2">Please select a valid option.</p>
@@ -177,7 +188,7 @@ const Setting = () => {
           </div>
         </div>
       </div>
-      <Bottom_dash/>
+      <Bottom_dash />
     </div>
   );
 };
