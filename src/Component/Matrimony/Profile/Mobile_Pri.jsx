@@ -19,6 +19,23 @@ const Mobile_Pri = () => {
   const toggleDropdown2 = () => {
     setIsOpen2(!isOpen2);
   };
+
+  const [open3, setOpen3] = useState(false);
+  const handleOpen = () => {
+    setOpen3(!open3);
+  };
+
+  const handleClose = () => {
+    setOpen3(false);
+  };
+  const [open4, setOpen4] = useState(false);
+  const handleOpen1 = () => {
+    setOpen4(!open4);
+  };
+
+  const handleClose1 = () => {
+    setOpen4(false);
+  };
   return (
     <div className="">
       <div className="mx-auto border   gap-x-5">
@@ -61,7 +78,80 @@ const Mobile_Pri = () => {
                   <div className="flex flex-col gap-y-3 p-2">
                     <div className="text-lg border-gray-400  flex justify-between items-center  text-gray-400 border-b border-dashed font-semibold ">
                       <div>Contact Number</div>
-                      <div className="text-xs text-blue-500">Edit</div>
+                      <div
+                        onClick={handleOpen}
+                        className="text-xs cursor-pointer text-blue-500"
+                      >
+                        Edit
+                      </div>
+                      {open3 && (
+                        <div className="fixed inset-0 mt-16 flex items-center justify-center  bg-black bg-opacity-50 z-40">
+                          <form className="  w-[50%] rounded-lg border-gray-600 bg-white  relative">
+                            <div
+                              className="absolute cursor-pointer right-2 top-0 font-semibold"
+                              onClick={handleClose}
+                            >
+                              x
+                            </div>
+                            <div className="flex flex-col  items-center justify-center">
+                              <div className="text-2xl font-semibold text-black mt-5">
+                                Contact Number
+                              </div>
+                              <div className="text-gray-700 font-semibold  text-sm">
+                                Brief outline of personal information
+                              </div>
+                              <div className=" w-[80%]  mt-10   ">
+                                <div className=" flex flex-col justify-center items-center gap-y-5   ">
+                                  <div className="flex  w-[87%] items-center gap-x-[37%] mx-auto ">
+                                    <label className="  text-gray-700 ">
+                                      Country *:
+                                    </label>
+                                    <select className="text-lg   border border-black rounded-md w-[42%] shadow-md  text-gray-600 ">
+                                      <option value="+91">+91</option>
+                                      <option value="+91">
+                                        Afghanistan(+93)
+                                      </option>
+                                      <option value="+91">Oman(+968)</option>
+                                      <option value="+91">
+                                        Saudi Arabia(+966)
+                                      </option>
+                                      <option value="+91">Russia(+7)</option>
+                                    </select>
+                                  </div>
+                                  <div className="flex  items-center  w-[87%]   mx-auto gap-x-6">
+                                    <label className="text-gray-700   ">
+                                      Primary Mobile Number *:
+                                    </label>
+                                    <div className="text-xs pl-1  w-[45%] text-gray-600">
+                                      <input
+                                        type="text"
+                                        className=" border border-black rounded-md w-[95%] shadow-md  placeholder:border-none text-lg  outline-none"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="flex gap-x-5  w-[88%]  mx-auto">
+                                    <label className="text-gray-700 ">
+                                      Parents' Contact Number *:
+                                    </label>
+                                    <div className="text-xs pl-1  w-48 text-gray-600">
+                                      <input
+                                        type="text"
+                                        className="  shadow-md  w-[95%] border border-black rounded-md placeholder:border-none  text-lg outline-none"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                <button 
+                                  type="submit"
+                                  className="w-[77%] text-white ml-10 bg-green-600 font-semibold  h-10 rounded-md text-center  my-7 py-2 text-base"
+                                >
+                                  Save
+                                </button>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      )}
                     </div>
 
                     <div className="flex gap-x-[21.5%] items-center">
@@ -90,17 +180,20 @@ const Mobile_Pri = () => {
                         />
                       </div>
                     </div>
-                    <div className="flex gap-x-[7.5%] items-center">
+                    <div className="flex gap-x-[7%] items-center">
                       <div className="text-xs font-semibold">
                         Parents' Contact Number{" "}
                         <span className="text-red-600">*</span>
                       </div>
-                      <div className="text-xs pl-1   w-48 text-black ">
-                        : Not Specified{" "}
-                        <span className="text-blue-600">Edit</span>
+                      <div className="text-xs pl-1 border border-black shadow-md w-48 text-gray-600">
+                        <input
+                          type="text"
+                          className=" placeholder:border-none outline-none"
+                        />
                       </div>
                     </div>
-                    <div className="flex gap-x-2 ml-[22%]">
+
+                    <div className="flex gap-x-2 ml-[27%]">
                       <div className="shadow-lg border-2 rounded-lg p-0.5">
                         <button className="bg-orange-500 py-0.5 px-1 text-white text-sm rounded-md font-semibold">
                           Save
@@ -116,7 +209,82 @@ const Mobile_Pri = () => {
                   <div className="flex flex-col  mt-3 gap-y-3 p-2 ">
                     <div className="text-lg border-gray-400  flex justify-between items-center  text-gray-400 border-b border-dashed font-semibold ">
                       <div>Contact Preferences</div>
-                      <div className="text-xs text-blue-500">Edit</div>
+                      <div  onClick={handleOpen1} className="text-xs text-blue-500 cursor-pointer">Edit</div>
+                      {open4 && (
+                        <div className="fixed inset-0 mt-16 flex items-center justify-center  bg-black bg-opacity-50 z-40">
+                          <form className="  w-[50%] rounded-lg border-gray-600 bg-white  relative">
+                            <div
+                              className="absolute cursor-pointer right-2 top-0 font-semibold"
+                              onClick={handleClose1}
+                            >
+                              x
+                            </div>
+                            <div className="flex flex-col  items-center justify-center">
+                              <div className="text-2xl font-semibold text-black mt-5">
+                                Contact Number
+                              </div>
+                              <div className="text-gray-700 font-semibold  text-sm">
+                                Brief outline of personal information
+                              </div>
+                              <div className=" w-[80%]  mt-10   ">
+                                <div className=" flex flex-col justify-center items-center gap-y-5   ">
+                                  
+                                  <div className="flex   items-center  w-[87%]   mx-auto gap-x-16">
+                                    <label className="text-gray-700   ">
+                                    Whom to contact:
+                                    </label>
+                                    <div className="text-xs pl-1  w-[45%] text-gray-600">
+                                      <input
+                                        type="text"
+                                        className=" border border-black rounded-md w-[95%] shadow-md  placeholder:border-none text-lg  outline-none"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="flex gap-x-6  w-[88%]  mx-auto">
+                                    <label className="text-gray-700 ">
+                                    Contact person's name:
+                                    </label>
+                                    <div className="text-xs pl-1  w-48 text-gray-600">
+                                      <input
+                                        type="text"
+                                        className="  shadow-md  w-[95%] border border-black rounded-md placeholder:border-none  text-lg outline-none"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="flex gap-x-6  w-[88%]  mx-auto">
+                                    <label className="text-gray-700 ">
+                                    Convenient time to call:
+                                    </label>
+                                    <div className="text-xs pl-1  w-48 text-gray-600">
+                                      <input
+                                        type="text"
+                                        className="  shadow-md  w-[95%] border border-black rounded-md placeholder:border-none  text-lg outline-none"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="flex gap-x-[28%]  w-[88%]  mx-auto">
+                                    <label className="text-gray-700 ">
+                                    Comments:
+                                    </label>
+                                    <div className="text-xs pl-1  w-48 text-gray-600">
+                                      <input
+                                        type="text"
+                                        className="  shadow-md  w-[95%] border border-black rounded-md placeholder:border-none  text-lg outline-none"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                <button 
+                                  type="submit"
+                                  className="w-[77%] text-white ml-10 bg-green-600 font-semibold  h-10 rounded-md text-center  my-7 py-2 text-base"
+                                >
+                                  Save
+                                </button>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      )}
                     </div>
                     <div className="w-[35%] flex flex-col ">
                       <div className="flex justify-between">
