@@ -141,7 +141,7 @@ const Mobile_Pri = () => {
                                     </div>
                                   </div>
                                 </div>
-                                <button 
+                                <button
                                   type="submit"
                                   className="w-[77%] text-white ml-10 bg-green-600 font-semibold  h-10 rounded-md text-center  my-7 py-2 text-base"
                                 >
@@ -209,7 +209,12 @@ const Mobile_Pri = () => {
                   <div className="flex flex-col  mt-3 gap-y-3 p-2 ">
                     <div className="text-lg border-gray-400  flex justify-between items-center  text-gray-400 border-b border-dashed font-semibold ">
                       <div>Contact Preferences</div>
-                      <div  onClick={handleOpen1} className="text-xs text-blue-500 cursor-pointer">Edit</div>
+                      <div
+                        onClick={handleOpen1}
+                        className="text-xs text-blue-500 cursor-pointer"
+                      >
+                        Edit
+                      </div>
                       {open4 && (
                         <div className="fixed inset-0 mt-16 flex items-center justify-center  bg-black bg-opacity-50 z-40">
                           <form className="  w-[50%] rounded-lg border-gray-600 bg-white  relative">
@@ -228,10 +233,9 @@ const Mobile_Pri = () => {
                               </div>
                               <div className=" w-[80%]  mt-10   ">
                                 <div className=" flex flex-col justify-center items-center gap-y-5   ">
-                                  
                                   <div className="flex   items-center  w-[87%]   mx-auto gap-x-16">
                                     <label className="text-gray-700   ">
-                                    Whom to contact:
+                                      Whom to contact:
                                     </label>
                                     <div className="text-xs pl-1  w-[45%] text-gray-600">
                                       <input
@@ -242,7 +246,7 @@ const Mobile_Pri = () => {
                                   </div>
                                   <div className="flex gap-x-6  w-[88%]  mx-auto">
                                     <label className="text-gray-700 ">
-                                    Contact person's name:
+                                      Contact person's name:
                                     </label>
                                     <div className="text-xs pl-1  w-48 text-gray-600">
                                       <input
@@ -253,7 +257,7 @@ const Mobile_Pri = () => {
                                   </div>
                                   <div className="flex gap-x-6  w-[88%]  mx-auto">
                                     <label className="text-gray-700 ">
-                                    Convenient time to call:
+                                      Convenient time to call:
                                     </label>
                                     <div className="text-xs pl-1  w-48 text-gray-600">
                                       <input
@@ -264,7 +268,7 @@ const Mobile_Pri = () => {
                                   </div>
                                   <div className="flex gap-x-[28%]  w-[88%]  mx-auto">
                                     <label className="text-gray-700 ">
-                                    Comments:
+                                      Comments:
                                     </label>
                                     <div className="text-xs pl-1  w-48 text-gray-600">
                                       <input
@@ -274,7 +278,7 @@ const Mobile_Pri = () => {
                                     </div>
                                   </div>
                                 </div>
-                                <button 
+                                <button
                                   type="submit"
                                   className="w-[77%] text-white ml-10 bg-green-600 font-semibold  h-10 rounded-md text-center  my-7 py-2 text-base"
                                 >

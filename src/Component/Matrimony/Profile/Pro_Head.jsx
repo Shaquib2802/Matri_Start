@@ -19,11 +19,11 @@ const Pro_Head = () => {
           />
         </div>
         <div className="w-[80%]  flex justify-end gap-x-20 items-center">
-          <div className=" flex  py-2.5 ">
+          <div  onClick={()=> navigate("/dash")} className=" flex cursor-pointer  py-2.5 ">
             <div>
               <HomeIcon className="text-green-600" />
             </div>
-            <div onClick={()=> navigate("/dash")} className="mt-1.5 cursor-pointer text-sm font-semibold text-green-600">
+            <div className="mt-1.5  text-sm font-semibold text-green-600">
               Home
             </div>
           </div>

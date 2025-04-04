@@ -7,7 +7,7 @@ const Photo_Pri = () => {
         Your Photo Privacy has been set to{" "}
         <span className="text-green-700">"Visible to All"</span>
       </div>
-      <form className="mt-2  border p-4">
+      <form className="mt-2   p-4">
         <div className="flex items-center">
           <div>
             <input type="radio"  id="visibility-option" className="!text-sm !mt-1" />
@@ -43,7 +43,7 @@ const Photo_Pri = () => {
           When members request to view your photo, you can decide whether to
           allow or not
         </div>
-        <div className="text-red-500 text-sm ">Upgrade to use this featurex x </div>
+        <div className="text-red-500 text-sm ">Upgrade to use this feature </div>
       </div>
       
     </div>
