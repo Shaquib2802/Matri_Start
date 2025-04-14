@@ -1,42 +1,38 @@
 import React from "react";
-import "./index.css";
 import {
   BrowserRouter,
+  Navigate,
   Route,
   Routes,
-  Navigate,
   useLocation,
 } from "react-router-dom";
+import Admin_dash from "./Component/Matrimony/Admin/Admin_dash";
+import Form_admin from "./Component/Matrimony/Admin/Form_admin";
 import Dashboard from "./Component/Matrimony/Dash_Board/Dashboard";
+import Detail from "./Component/Matrimony/Dash_Board/Detail";
+import Photo from "./Component/Matrimony/Dash_Board/Photo";
 import Upgrade from "./Component/Matrimony/Dash_Board/Upgrade";
+import Blog from "./Component/Matrimony/F&Q/Blog";
+import F_andQ from "./Component/Matrimony/F&Q/F_andQ";
 import Home_Page from "./Component/Matrimony/Home_Page/Home_Page";
+import Matches from "./Component/Matrimony/NavBar/Matches";
 import Prime_Header from "./Component/Matrimony/Prime/Prime_Header";
+import { Alert } from "./Component/Matrimony/Profile/Alert";
 import Edit from "./Component/Matrimony/Profile/Edit";
 import Help from "./Component/Matrimony/Profile/Help";
+import Horo from "./Component/Matrimony/Profile/Horo";
+import Mobile_Pri from "./Component/Matrimony/Profile/Mobile_Pri";
+import Photo_Pri from "./Component/Matrimony/Profile/Photo_Pri";
+import Preview from "./Component/Matrimony/Profile/Preview";
+import Privacy from "./Component/Matrimony/Profile/Privacy";
 import Profile from "./Component/Matrimony/Profile/Profile";
 import Safe from "./Component/Matrimony/Profile/Safe";
 import Setting from "./Component/Matrimony/Profile/Setting";
 import Verify from "./Component/Matrimony/Profile/Verify";
-import Photo from "./Component/Matrimony/Dash_Board/Photo";
-import Preview from "./Component/Matrimony/Profile/Preview";
-import Matches from "./Component/Matrimony/NavBar/Matches";
-import Form_admin from "./Component/Matrimony/Admin/Form_admin";
-import Admin_dash from "./Component/Matrimony/Admin/Admin_dash";
-import F_andQ from "./Component/Matrimony/F&Q/F_andQ";
-import Blog from "./Component/Matrimony/F&Q/Blog";
-import Search from "./Component/Matrimony/Search/Search";
 import Result from "./Component/Matrimony/Search/Result";
-import Detail from "./Component/Matrimony/Dash_Board/Detail";
-import Notificatio_Modal from "./Component/Matrimony/Dash_Board/Notificatio_Modal";
-import All_Matches from "./Component/Matrimony/Matches/All_Matches";
-import All from "./Component/Matrimony/Matches/All";
-import Newly from "./Component/Matrimony/Matches/Newly";
-import Sort from "./Component/Matrimony/Matches/Sort";
-import Mobile_Pri from "./Component/Matrimony/Profile/Mobile_Pri";
-import Photo_Pri from "./Component/Matrimony/Profile/Photo_Pri";
-import Horo from "./Component/Matrimony/Profile/Horo";
-import Privacy from "./Component/Matrimony/Profile/Privacy";
-import { Alert } from "./Component/Matrimony/Profile/Alert";
+import Search from "./Component/Matrimony/Search/Search";
+import "./index.css";
+import Task from "./Component/Matrimony/Anant/Task";
 
 const isAuthenticated = () => {
   const token = localStorage.getItem("token");
@@ -57,6 +53,7 @@ const AuthGuard = ({ children }) => {
 
   return children;
 };
+
 
 const App = () => {
   return (
@@ -115,7 +112,7 @@ const App = () => {
           path="/photo"
           element={
             <AuthGuard>
-              <Photo_Pri/>
+              <Photo_Pri />
             </AuthGuard>
           }
         />
@@ -123,7 +120,7 @@ const App = () => {
           path="/horo"
           element={
             <AuthGuard>
-              <Horo/>
+              <Horo />
             </AuthGuard>
           }
         />
@@ -131,7 +128,7 @@ const App = () => {
           path="/mob"
           element={
             <AuthGuard>
-              <Mobile_Pri/>
+              <Mobile_Pri />
             </AuthGuard>
           }
         />
@@ -195,7 +192,7 @@ const App = () => {
           path="/privacy"
           element={
             <AuthGuard>
-              <Privacy/>
+              <Privacy />
             </AuthGuard>
           }
         />
@@ -241,27 +238,12 @@ const App = () => {
         />
         <Route
           path="/matches"
-          element={
-            <AuthGuard>
-              {/* <All_Matches /> */}
-            </AuthGuard>
-          }
+          element={<AuthGuard>{/* <All_Matches /> */}</AuthGuard>}
         />
-        <Route
-          path="/all"
-          element={
-            <AuthGuard>
-              {/* <All/> */}
-            </AuthGuard>
-          }
-        />
+        <Route path="/all" element={<AuthGuard>{/* <All/> */}</AuthGuard>} />
         <Route
           path="/newly"
-          element={
-            <AuthGuard>
-              {/* <Newly/> */}
-            </AuthGuard>
-          }
+          element={<AuthGuard>{/* <Newly/> */}</AuthGuard>}
         />
 
         <Route
@@ -272,19 +254,20 @@ const App = () => {
             </AuthGuard>
           }
         />
-        <Route
-          path="/sort"
-          element={
-            <AuthGuard>
-              {/* <Sort/> */}
-            </AuthGuard>
-          }
-        />
+        <Route path="/sort" element={<AuthGuard>{/* <Sort/> */}</AuthGuard>} />
         <Route
           path="/alert"
           element={
             <AuthGuard>
-              <Alert/>
+              <Alert />
+            </AuthGuard>
+          }
+        />
+        <Route
+          path="/task"
+          element={
+            <AuthGuard>
+              <Task />
             </AuthGuard>
           }
         />

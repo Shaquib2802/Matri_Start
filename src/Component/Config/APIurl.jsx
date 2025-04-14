@@ -15,4 +15,5 @@ export const ApiUrl = {
   ver_pro: "/profile-verification-api/",
   sendRequest: "/send-chat-request/",
   getRequest: "/get-received-chat-requests/",
+  medical: "/department-management-api/",
 };

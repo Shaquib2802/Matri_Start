@@ -148,7 +148,7 @@ const Body_Pro = () => {
                   <form
                     onSubmit={formik.handleSubmit}
                     encType="multipart/form-data"
-                    className="border-2 flex flex-col justify-center  w-[80%] h-[85vh]  bg-white  relative"
+                    className="border-2 flex flex-col justify-center   w-[80%] h-[85vh]  bg-white  relative"
                   >
                     <div
                       className="absolute cursor-pointer right-2 top-0 font-semibold"

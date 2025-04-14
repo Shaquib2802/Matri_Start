@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import HomeIcon from "@mui/icons-material/Home";
-import { useNavigate } from "react-router-dom";
-import "animate.css";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useQuery } from "@tanstack/react-query";
+import "animate.css";
+import React, { useState } from "react";
 import { MdNotificationsActive } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 import { Get_Noti } from "../../Service/Get_pref";
-import Notificatio_Modal from "./Notificatio_Modal";
 
 const HeaderDash = () => {
   const [open, setOpen] = useState(false);
@@ -31,7 +30,7 @@ const HeaderDash = () => {
     <div className="w-[100%] shadow-lg top-0 sticky z-50 bg-white ">
       <div className="flex w-[90%] gap-x-8 h-[16vh] mx-auto">
         <div className="w-[20%]">
-          <img
+          <img 
             className="p-6"
             src="https://imgs.bharatmatrimony.com/bmimgs/new-logo/bharat-matrimony-logo.png"
             alt="Bharat Matrimony Logo"
@@ -51,7 +50,7 @@ const HeaderDash = () => {
           <div className="flex gap-x-0.5 py-3">
             <img
               src="https://imgs.bharatmatrimony.com/webapp-assets/revamp-images/bottom-navigation-matches.svg"
-              alt="Matches"
+              alt="Matches" 
             />
             <div className="mt-0.5 text-sm text-black">Matches</div>
           </div>
